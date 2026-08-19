@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { View, FlatList, ActivityIndicator, StyleSheet, Image, Dimensions } from 'react-native';
 import { Header } from '@rneui/themed';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -7,38 +7,53 @@ import EventRow from '../../components/EventRow';
 
 const { width } = Dimensions.get('window');
 
+// Agrupa un array plano de eventos en [{ title, events }, ...] por categoría
+const groupEventsByCategory = (events) => {
+    const groups = {};
+
+    events.forEach((event) => {
+        const categoryKey = event.category || 'Otros';
+
+        if (!groups[categoryKey]) {
+            groups[categoryKey] = [];
+        }
+        groups[categoryKey].push(event);
+    });
+
+    return Object.keys(groups).map((categoryKey) => ({
+        title: categoryKey,
+        events: groups[categoryKey],
+    }));
+};
+
 const Home = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchEvents = async () => {
-            // Replace this mock data with your actual API call later
-            const mockApiData = [
-                {
-                    id: 'cat1',
-                    title: 'Cachengue',
-                    events: [
-                        { id: 'e1', title: 'Fiesta 1', date: '2026-10-15' },
-                        { id: 'e2', title: 'Fiesta 2', date: '2026-08-25' },
-                    ],
-                },
-                {
-                    id: 'cat2',
-                    title: 'Tecno',
-                    events: [
-                        { id: 'e4', title: 'Festival 1', date: '2026-09-01' },
-                        { id: 'e5', title: 'Festival 2', date: '2026-09-02' },
-                    ],
-                },
-            ];
+            try {
+                const response = await fetch('http://192.168.1.38:4001/eventos');
 
-            setData(mockApiData);
-            setLoading(false);
+                if (!response.ok) {
+                    throw new Error('No dio response OK');
+                }
+
+                const jsonData = await response.json();
+                setData(jsonData);
+
+            } catch (error) {
+                console.error("Error cargando JSON:", error);
+            } finally {
+                setLoading(false);
+            }
         };
 
         fetchEvents();
     }, []);
+
+    // Se recalcula solo cuando "data" cambia, no en cada render
+    const groupedData = useMemo(() => groupEventsByCategory(data), [data]);
 
     const renderHeader = () => (
         <Image
@@ -49,17 +64,16 @@ const Home = () => {
     );
 
     return (
-        // Assuming a dark theme based on the typical Netflix style
-        <SafeAreaProvider style={{ flex: 1, paddingTop: 0, backgroundColor: '#000' }}>
+        <SafeAreaProvider style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }}>
             <Header
-                statusBarProps={{ barStyle: 'dark-content' }}
+                statusBarProps={{ barStyle: 'light-content' }}
                 placement="center"
                 // leftComponent={{icon: 'menu', color: '#000'}}
-                centerComponent={{ text: '+joditas', style: { color: '#000', fontSize: 18, fontWeight: 'bold' } }}
+                centerComponent={{ text: '+joditas', style: { color: '#888', fontSize: 18, fontWeight: 'bold' } }}
                 // rightComponent={{icon: 'search', color: '#000'}}
                 containerStyle={{
-                    backgroundColor: '#ca780c',
-                    borderBottomWidth: 0, // Removes the default 1px border line from RNEUI
+                    backgroundColor: '#111',
+                    borderBottomWidth: 0,
                 }}
             />
 
@@ -67,8 +81,8 @@ const Home = () => {
                 <ActivityIndicator style={styles.loader} color="#ca780c" size="large" />
             ) : (
                 <FlatList
-                    data={data}
-                    keyExtractor={(item) => item.id}
+                    data={groupedData}
+                    keyExtractor={(group) => group.title}
                     renderItem={({ item }) => <EventRow category={item} />}
                     ListHeaderComponent={renderHeader}
                     contentContainerStyle={{ paddingBottom: 50 }}

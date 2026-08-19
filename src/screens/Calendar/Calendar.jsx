@@ -4,14 +4,20 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Calendar= () => {
     return (
-        <SafeAreaProvider style={{ flex: 1, padding: 0 }}>
+        <SafeAreaProvider style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }}>
             <Header
-                leftComponent= {{icon: 'menu', color: '#fff'}}
-                centerComponent= {{text: '+joditas', style: { color: '#000'}}}
-                rightComponent={{icon: 'home', color: '#fff'}}
+                statusBarProps={{ barStyle: 'light-content' }}
+                placement="center"
+                // leftComponent={{icon: 'menu', color: '#000'}}
+                centerComponent={{ text: '+joditas', style: { color: '#888', fontSize: 18, fontWeight: 'bold' } }}
+                // rightComponent={{icon: 'search', color: '#000'}}
+                containerStyle={{
+                    backgroundColor: '#111',
+                    borderBottomWidth: 0,
+                }}
             />
-            <Text>Calendar</Text>
         </SafeAreaProvider>
     );
 };
+
 export default Calendar;

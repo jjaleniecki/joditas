@@ -30,7 +30,7 @@ const EventRow = ({ category }) => {
 
 const styles = StyleSheet.create({
     rowContainer: { marginBottom: 25 },
-    rowTitle: { color: '#fff', fontSize: 20, fontWeight: 'bold', marginLeft: 15, marginBottom: 10 },
+    rowTitle: { color: '#888', fontSize: 20, fontWeight: 'bold', marginLeft: 15, marginBottom: 10 },
 });
 
 export default memo(EventRow);
