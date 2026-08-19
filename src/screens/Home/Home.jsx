@@ -2,6 +2,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { View, FlatList, ActivityIndicator, StyleSheet, Image, Dimensions } from 'react-native';
 import { Header } from '@rneui/themed';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import styles from './styles'; //estilos de su carpeta
 
 import EventRow from '../../components/EventRow';
 
@@ -96,13 +97,5 @@ const Home = () => {
         </SafeAreaProvider>
     );
 };
-
-const styles = StyleSheet.create({
-    loader: {
-        flex: 1,
-        justifyContent: 'center',
-        backgroundColor: '#000'
-    }
-});
 
 export default Home;
