@@ -15,6 +15,13 @@ function obtenerEventoJson(id) {
     return eventosJson.find(evento => evento.id == id);
 }
 
+function crearEvento(nuevoEvento) {
+    const eventosJson = JSON.parse(fs.readFileSync(pathJson, 'utf-8'));
+    eventosJson.push(nuevoEvento);
+    fs.writeFileSync(pathJson, JSON.stringify(eventosJson, null, 4), 'utf-8');
+    return nuevoEvento;
+}
+
 function cargarEventoParticular(contenedor, evento) {
     contenedor.innerHTML = ` 
             <h1 class = "evento-particular">
@@ -56,4 +63,4 @@ function cargarEventosPorCat(contenedor, eventos,limite) {
     
 }
 
-module.exports = { obtenerEventoJson, obtenerEventosJson, cargarEventoParticular, cargarEventosPorCat };
+module.exports = { obtenerEventoJson, obtenerEventosJson, crearEvento, cargarEventoParticular, cargarEventosPorCat };

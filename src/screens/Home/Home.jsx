@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { View, FlatList, ActivityIndicator, StyleSheet, Image, Dimensions } from 'react-native';
+import { View, FlatList, ActivityIndicator, Image, Dimensions } from 'react-native';
 import { Header } from '@rneui/themed';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import styles from './styles'; //estilos de su carpeta
@@ -59,7 +59,7 @@ const Home = () => {
     const renderHeader = () => (
         <Image
             source={require('../../assets/images/ppal.jpg')}
-            style={{ width: width, height: 400, marginBottom: 20 }}
+            style={{ width: width, height: 260, marginBottom: 20 }}
             resizeMode="cover"
         />
     );

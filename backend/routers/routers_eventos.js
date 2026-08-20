@@ -1,7 +1,9 @@
 const express = require("express");
 const jwt = require('jsonwebtoken');
 const router = express.Router();
-const {obtenerEventosJson, obtenerEventoJson,cargarEventoParticular,cargarEventosPorCat} = require('../models/models_eventos.js');
+const {obtenerEventosJson, obtenerEventoJson, crearEvento, cargarEventoParticular,cargarEventosPorCat} = require('../models/models_eventos.js');
+const upload = require('../middleware/upload.js');
+const { randomUUID } = require('crypto');
 const cookieParser = require('cookie-parser');
 
 const fs = require("fs");
@@ -42,6 +44,50 @@ router.get("/", async (req, res) => {
 router.get("/eventos", async (req, res) => {
     const eventos = obtenerEventosJson();
     res.json(eventos);
+});
+
+router.post("/eventos", auth, upload.single('img'), async (req, res) => {
+    try {
+        const {
+            title,
+            venue,
+            openTime,
+            closeTime,
+            contact,
+            mapUrl,
+            city,
+            category,
+            date,
+        } = req.body;
+        const camposRequeridos = { title, venue, openTime, closeTime, contact, mapUrl, city, category, date };
+        const faltantes = Object.entries(camposRequeridos)
+            .filter(([_, valor]) => !valor)
+            .map(([clave]) => clave);
+        if (faltantes.length > 0) {
+            return res.status(400).json({ error: `Faltan campos: ${faltantes.join(', ')}` });
+        }
+        if (!req.file) {
+            return res.status(400).json({ error: 'La imagen del flyer es obligatoria' });
+        }
+        const nuevoEvento = {
+            id: randomUUID(),
+            title,
+            img: req.file.filename,
+            venue,
+            openTime,
+            closeTime,
+            contact,
+            mapUrl,
+            city,
+            category,
+            date,
+        };
+        const eventoGuardado = crearEvento(nuevoEvento);
+        res.status(201).json(eventoGuardado);
+    } catch (error) {
+        console.error('Error al crear evento:', error);
+        res.status(500).json({ error: 'Error interno al crear el evento' });
+    }
 });
 
 
@@ -123,21 +169,29 @@ router.get('/admin.html', auth, (req, res) => {
 });
 
 function auth(req, res, next) {
-    //const header = req.headers.authorization;
-    const token = req.cookies.token;
+    // 1. Intentamos leer el token del header Authorization (React Native)
+    //    Formato esperado: "Bearer eyJhbGciOiJIUzI1NiIs..."
+    const authHeader = req.headers.authorization;
+    let token = authHeader && authHeader.startsWith('Bearer ')
+        ? authHeader.split(' ')[1]
+        : null;
+
+    // 2. Si no vino por header, probamos con la cookie (versión web)
+    if (!token) {
+        token = req.cookies.token;
+    }
+
     if (!token) {
         return res.status(401).json({ error: "Acceso denegado" });
     }
-    //const token = header.split(" ")[1]; // "Bearer <token>"
 
     try {
         const decoded = jwt.verify(token, JWT_SECRET);
-        req.user = decoded; 
-        next(); 
+        req.user = decoded;
+        next();
     } catch (err) {
         return res.status(403).json({ error: "Token invalido o expirado" });
     }
 }
 
-module.exports = auth;
 module.exports = router;

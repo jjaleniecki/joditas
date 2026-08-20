@@ -9,7 +9,7 @@
         "contact": "https://www.instagram.com/fiesta_kiwi/",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24821.156123862045!2d-68.08900098916011!3d-38.954948799999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33d462a98bef%3A0xb9170f526e01c4d1!2sLA%20NONNINA%20Espacio%20de%20Eventos!5e0!3m2!1ses!2sar!4v1759432761341!5m2!1ses!2sar",
         "city": "Buenos Aires",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -22,7 +22,7 @@
         "contact": "https://instagram.com/moodliveok",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.790159065663!2d-68.0583724!3d-38.951622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33196ae9bf47%3A0x8935eaa087a2d345!2sMood%20Live!5e0!3m2!1ses!2sar!4v1760044539504!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -35,20 +35,20 @@
         "contact": "https://instagram.com/bresh",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.674307862607!2d-68.1380886!3d-38.9542683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a333579b9b721%3A0xb25a8725a0874a24!2sEspacio%20Duam!5e0!3m2!1ses!2sar!4v1760044955380!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
         "id": "4",
         "title": "Summer",
-        "img": "cachengue.jpg",
+        "img": "Cachengue.jpg",
         "venue": "Espacio Duam ",
         "openTime": "00:30hs",
         "closeTime": "06:00hs",
         "contact": "https://instagram.com/summerfest",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.674307862607!2d-68.1380886!3d-38.9542683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a333579b9b721%3A0xb25a8725a0874a24!2sEspacio%20Duam!5e0!3m2!1ses!2sar!4v1760044955380!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -61,7 +61,7 @@
         "contact": "https://instagram.com/tulumbarok",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.8704538165!2d-68.06197209999999!3d-38.949787799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a3300645c25d1%3A0x4879de12bb99adb0!2stulum!5e0!3m2!1ses!2sar!4v1760045029466!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -74,7 +74,7 @@
         "contact": "https://instagram.com/vision.festival",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24821.156123862045!2d-68.08900098916011!3d-38.954948799999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33d462a98bef%3A0xb9170f526e01c4d1!2sLA%20NONNINA%20Espacio%20de%20Eventos!5e0!3m2!1ses!2sar!4v1759432761341!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "tecno",
+        "category": "Tecno",
         "date": "2018-12-09"
     },
     {
@@ -87,7 +87,7 @@
         "contact": "https://instagram.com/vision.festival",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24821.156123862045!2d-68.08900098916011!3d-38.954948799999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33d462a98bef%3A0xb9170f526e01c4d1!2sLA%20NONNINA%20Espacio%20de%20Eventos!5e0!3m2!1ses!2sar!4v1759432761341!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "tecno",
+        "category": "Tecno",
         "date": "2018-12-09"
     },
     {
@@ -100,7 +100,7 @@
         "contact": "https://instagram.com/vision.festival",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24821.156123862045!2d-68.08900098916011!3d-38.954948799999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33d462a98bef%3A0xb9170f526e01c4d1!2sLA%20NONNINA%20Espacio%20de%20Eventos!5e0!3m2!1ses!2sar!4v1759432761341!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "tecno",
+        "category": "Tecno",
         "date": "2018-12-09"
     },
     {
@@ -113,7 +113,7 @@
         "contact": "https://instagram.com/vision.festival",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24821.156123862045!2d-68.08900098916011!3d-38.954948799999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33d462a98bef%3A0xb9170f526e01c4d1!2sLA%20NONNINA%20Espacio%20de%20Eventos!5e0!3m2!1ses!2sar!4v1759432761341!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "tecno",
+        "category": "Tecno",
         "date": "2018-12-09"
     },
     {
@@ -126,7 +126,7 @@
         "contact": "https://instagram.com/vision.festival",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24821.156123862045!2d-68.08900098916011!3d-38.954948799999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33d462a98bef%3A0xb9170f526e01c4d1!2sLA%20NONNINA%20Espacio%20de%20Eventos!5e0!3m2!1ses!2sar!4v1759432761341!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "tecno",
+        "category": "Tecno",
         "date": "2018-12-09"
     },
     {
@@ -139,7 +139,7 @@
         "contact": "https://instagram.com/rktfiesta",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6205.27475851252!2d-68.0529558!3d-38.9551118!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33d462cc3157%3A0x51e8005c84277f11!2sIndependencia%20428%2C%20Q8300%20Neuqu%C3%A9n!5e0!3m2!1ses!2sar!4v1760044851950!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "tecno",
+        "category": "RKT",
         "date": "2018-12-09"
     },
     {
@@ -152,7 +152,7 @@
         "contact": "https://instagram.com/elcaserioclub",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6205.27475851252!2d-68.0529558!3d-38.9551118!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33d462cc3157%3A0x51e8005c84277f11!2sIndependencia%20428%2C%20Q8300%20Neuqu%C3%A9n!5e0!3m2!1ses!2sar!4v1760044851950!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "rkt",
+        "category": "RKT",
         "date": "2018-12-09"
     },
     {
@@ -165,20 +165,20 @@
         "contact": "https://instagram.com/moodliveok",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.790159065663!2d-68.0583724!3d-38.951622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33196ae9bf47%3A0x8935eaa087a2d345!2sMood%20Live!5e0!3m2!1ses!2sar!4v1760044539504!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "rkt",
+        "category": "RKT",
         "date": "2018-12-09"
     },
     {
         "id": "14",
         "title": "Modo RKT",
-        "img": "rkt.jpg",
+        "img": "RKT.jpg",
         "venue": "Mood",
         "openTime": "23:00hs",
         "closeTime": "06:00hs",
         "contact": "https://instagram.com/modorkt",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.790159065663!2d-68.0583724!3d-38.951622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33196ae9bf47%3A0x8935eaa087a2d345!2sMood%20Live!5e0!3m2!1ses!2sar!4v1760044539504!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "rkt",
+        "category": "RKT",
         "date": "2018-12-09"
     },
     {
@@ -191,7 +191,7 @@
         "contact": "https://instagram.com/elcaserioclub",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6205.27475851252!2d-68.0529558!3d-38.9551118!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33d462cc3157%3A0x51e8005c84277f11!2sIndependencia%20428%2C%20Q8300%20Neuqu%C3%A9n!5e0!3m2!1ses!2sar!4v1760044851950!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "rkt",
+        "category": "RKT",
         "date": "2018-12-09"
     },
     {
@@ -204,7 +204,7 @@
         "contact": "https://instagram.com/moodliveok",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.790159065663!2d-68.0583724!3d-38.951622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33196ae9bf47%3A0x8935eaa087a2d345!2sMood%20Live!5e0!3m2!1ses!2sar!4v1760044539504!5m2!1ses!2sar",
         "city": "Neuquén",
-        "category": "rkt",
+        "category": "RKT",
         "date": "2018-12-09"
     },
     {
@@ -217,7 +217,7 @@
         "contact": "https://www.instagram.com/ds__eventos/",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13145.058910977452!2d-58.50173180453199!3d-34.54685209999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaa2236df3f3%3A0x18e83953f81e973d!2sAribau!5e0!3m2!1ses-419!2sar!4v1764806896540!5m2!1ses-419!2sar",
         "city": "Buenos Aires",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -230,7 +230,7 @@
         "contact": "https://www.instagram.com/madero.boardwalk/",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2424293044132!2d-58.36749182348344!3d-34.598030757199275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335dda86c2db1%3A0xbdb3adc93c1fa645!2sMadero%20Boardwalk!5e0!3m2!1ses!2sar!4v1764807099230!5m2!1ses!2sar",
         "city": "Buenos Aires",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -243,7 +243,7 @@
         "contact": "https://www.instagram.com/signos.pub/",
         "mapUrl": "<https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8420.577217290554!2d-55.86723353796146!3d-27.456286861315828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9457b9d0634da4b1%3A0x5a2a43be58020!2sSignos%20Music%20Pub!5e0!3m2!1ses!2sar!4v1764807273688!5m2!1ses!2sar",
         "city": "Misiones",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -256,7 +256,7 @@
         "contact": "https://www.instagram.com/signos.pub/",
         "mapUrl": "<https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8420.577217290554!2d-55.86723353796146!3d-27.456286861315828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9457b9d0634da4b1%3A0x5a2a43be58020!2sSignos%20Music%20Pub!5e0!3m2!1ses!2sar!4v1764807273688!5m2!1ses!2sar",
         "city": "Misiones",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -269,7 +269,7 @@
         "contact": "https://www.instagram.com/infinity.jujuy/",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5147.384638560544!2d-65.27324906518065!3d-24.18047850270901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b05eda4c37e29%3A0xfda280c6af96cbb1!2sPasquini%20L%C3%B3pez%20111%2C%20Y4600%20San%20Salvador%20de%20Jujuy%2C%20Jujuy!5e0!3m2!1ses!2sar!4v1764807727684!5m2!1ses!2sar",
         "city": "Jujuy",
-        "category": null,
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -282,7 +282,7 @@
         "contact": "https://www.instagram.com/madero.boardwalk/",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2424293044132!2d-58.36749182348344!3d-34.598030757199275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335dda86c2db1%3A0xbdb3adc93c1fa645!2sMadero%20Boardwalk!5e0!3m2!1ses!2sar!4v1764807099230!5m2!1ses!2sar",
         "city": "Buenos Aires",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -295,7 +295,7 @@
         "contact": "https://www.instagram.com/madero.boardwalk/",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2424293044132!2d-58.36749182348344!3d-34.598030757199275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335dda86c2db1%3A0xbdb3adc93c1fa645!2sMadero%20Boardwalk!5e0!3m2!1ses!2sar!4v1764807099230!5m2!1ses!2sar",
         "city": "Buenos Aires",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -308,7 +308,7 @@
         "contact": "https://www.instagram.com/madero.boardwalk/",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2424293044132!2d-58.36749182348344!3d-34.598030757199275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335dda86c2db1%3A0xbdb3adc93c1fa645!2sMadero%20Boardwalk!5e0!3m2!1ses!2sar!4v1764807099230!5m2!1ses!2sar",
         "city": "Buenos Aires",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
     },
     {
@@ -321,7 +321,33 @@
         "contact": "https://www.instagram.com/madero.boardwalk/",
         "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2424293044132!2d-58.36749182348344!3d-34.598030757199275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335dda86c2db1%3A0xbdb3adc93c1fa645!2sMadero%20Boardwalk!5e0!3m2!1ses!2sar!4v1764807099230!5m2!1ses!2sar",
         "city": "Buenos Aires",
-        "category": "cachengue",
+        "category": "Cachengue",
         "date": "2018-12-09"
+    },
+    {
+        "id": "762ddb9a-ae6f-45e2-ada5-bbb8ca29b951",
+        "title": "Evento de prueba",
+        "img": "a0467066-8fc6-4487-96f1-a5989ffeda7a.jpg",
+        "venue": "Test Venue",
+        "openTime": "00:00hs",
+        "closeTime": "06:00hs",
+        "contact": "https://instagram.com/test",
+        "mapUrl": "https://maps.google.com/test",
+        "city": "Neuquen",
+        "category": "Tecno",
+        "date": "2026-03-15"
+    },
+    {
+        "id": "545ff4f8-8800-4de2-9d3a-20b8dd990abe",
+        "title": "jereprueba",
+        "img": "5fa9ed2f-bd30-42f3-b803-340c0b81e05e.jpg",
+        "venue": "micasa",
+        "openTime": "10",
+        "closeTime": "12",
+        "contact": "insta.jere",
+        "mapUrl": "jere.maps",
+        "city": "neuquen",
+        "category": "Tecno",
+        "date": "2026-10-01"
     }
 ]
