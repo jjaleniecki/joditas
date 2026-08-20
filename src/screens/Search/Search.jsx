@@ -1,11 +1,11 @@
 import { View, Text } from "react-native";
 import { Header } from '@rneui/themed'
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 import styles from './styles'; //estilos de su carpeta
 
 const Search= () => {
     return (
-        <SafeAreaProvider style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }}>
+        <SafeAreaView style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }} edges={['bottom', 'left', 'right']}>
             <Header
                 statusBarProps={{ barStyle: 'light-content' }}
                 placement="center"
@@ -17,7 +17,7 @@ const Search= () => {
                     borderBottomWidth: 0,
                 }}
             />
-        </SafeAreaProvider>
+        </SafeAreaView>
     );
 };
 export default Search;

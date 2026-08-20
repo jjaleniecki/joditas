@@ -349,5 +349,18 @@
         "city": "neuquen",
         "category": "Tecno",
         "date": "2026-10-01"
+    },
+    {
+        "id": "97039d2e-17cb-4a54-8c70-6f9bb9a93ef4",
+        "title": "jerefest",
+        "img": "ea153d25-cfc6-4f2c-bc02-7898a3620b88.jpg",
+        "venue": "mmikasa",
+        "openTime": "00:00",
+        "closeTime": "00:00",
+        "contact": "@jjale",
+        "mapUrl": "hola",
+        "city": "Nqn",
+        "category": "RKT",
+        "date": "2026-06-10"
     }
 ]

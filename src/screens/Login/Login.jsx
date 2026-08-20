@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import { Header } from '@rneui/themed';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { useAuth } from '../../context/AuthContext';
 import LoginForm from './LoginForm';
@@ -11,7 +11,7 @@ const Login = () => {
     const { isLoggedIn, isLoading } = useAuth();
 
     return (
-        <SafeAreaProvider style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }}>
+        <SafeAreaView style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }} edges={['bottom', 'left', 'right']}>
             <Header
                 statusBarProps={{ barStyle: 'light-content' }}
                 placement="center"
@@ -35,7 +35,7 @@ const Login = () => {
             ) : (
                 <LoginForm />
             )}
-        </SafeAreaProvider>
+        </SafeAreaView>
     );
 };
 

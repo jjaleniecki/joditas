@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { View, FlatList, ActivityIndicator, Image, Dimensions } from 'react-native';
 import { Header } from '@rneui/themed';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles'; //estilos de su carpeta
 
 import EventRow from '../../components/EventRow';
@@ -65,7 +65,7 @@ const Home = () => {
     );
 
     return (
-        <SafeAreaProvider style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }}>
+        <SafeAreaView style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }} edges={['bottom', 'left', 'right']}>
             <Header
                 statusBarProps={{ barStyle: 'light-content' }}
                 placement="center"
@@ -94,7 +94,7 @@ const Home = () => {
                     removeClippedSubviews={true}
                 />
             )}
-        </SafeAreaProvider>
+        </SafeAreaView>
     );
 };
 
