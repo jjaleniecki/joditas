@@ -147,7 +147,7 @@ router.post("/login.html", (req, res) =>{
     console.log("Password: " + pass);
 
     if(email != "jere" || pass != "1234"){
-        return res.status(401).json({ error: "Invalid credentials" });
+        return res.status(401).json({ error: "Credencial inválida" });
     }
     
     const payload = {
