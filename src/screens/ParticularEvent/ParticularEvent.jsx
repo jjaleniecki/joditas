@@ -12,8 +12,9 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles'; //estilos de su carpeta
+import { API_BASE_URL } from '../../utils/api';
 
-const API_BASE_URL = 'http://192.168.1.38:4001';
+
 
 const ParticularEvent = () => {
     const navigation = useNavigation();

@@ -18,7 +18,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { useAuth } from '../../context/AuthContext';
 import CategoryPicker from '../../components/CategoryPicker';
 
-const API_BASE_URL = 'http://192.168.1.38:4001';
+import { API_BASE_URL } from '../../utils/api';
 
 const CAMPOS_INICIALES = {
     title: '',

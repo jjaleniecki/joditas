@@ -6,7 +6,7 @@ const { width } = Dimensions.get('window');
 export const CARD_WIDTH = width * 0.35;
 
 // Misma base que usás en Home.jsx
-const API_BASE_URL = 'http://192.168.1.38:4001';
+import { API_BASE_URL } from '../utils/api';
 
 const EventCard = ({ item }) => {
     const navigation = useNavigation();

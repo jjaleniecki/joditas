@@ -15,7 +15,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../../context/AuthContext';
 import styles from './styles';
 
-const API_BASE_URL = 'http://192.168.1.38:4001';
+import { API_BASE_URL } from '../../utils/api';
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
