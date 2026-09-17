@@ -3,6 +3,7 @@ import { View, FlatList, ActivityIndicator, Image, Dimensions } from 'react-nati
 import { Header } from '@rneui/themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles'; //estilos de su carpeta
+import { API_BASE_URL } from '../../utils/api';
 
 import EventRow from '../../components/EventRow';
 
@@ -34,7 +35,7 @@ const Home = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await fetch('http://192.168.1.38:4001/eventos');
+                const response = await fetch(`${API_BASE_URL}/eventos`);
 
                 if (!response.ok) {
                     throw new Error('No dio response OK');
