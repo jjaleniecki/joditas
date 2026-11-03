@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, Pressable, TextInput, StyleSheet, ScrollView } from 'react-native';
-import { normalizeCategory } from '../utils/normalizeCategory';
 
 // categorias: array de strings ya existentes (sacadas de los eventos actuales)
-// value: categoría seleccionada actualmente (string normalizado)
-// onChange: (categoriaNormalizada) => void
+// value: categoría seleccionada actualmente
+// onChange: (categoria) => void
 const CategoryPicker = ({ categorias, value, onChange }) => {
     const [agregandoNueva, setAgregandoNueva] = useState(false);
     const [nuevaCategoria, setNuevaCategoria] = useState('');
@@ -15,9 +14,9 @@ const CategoryPicker = ({ categorias, value, onChange }) => {
     };
 
     const confirmarNueva = () => {
-        const normalizada = normalizeCategory(nuevaCategoria);
-        if (normalizada) {
-            onChange(normalizada);
+        const categoria = nuevaCategoria.trim();
+        if (categoria) {
+            onChange(categoria);
         }
         setNuevaCategoria('');
         setAgregandoNueva(false);

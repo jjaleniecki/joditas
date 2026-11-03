@@ -15,6 +15,7 @@ import styles from './styles'; //estilos de su carpeta
 import { API_BASE_URL } from '../../utils/api';
 import { abrirMapa } from '../../utils/maps'; //chequea validez del link de maps
 import { abrirContacto } from '../../utils/links'; //idem para contacto
+import { formatEventDate } from '../../utils/formatEventDate';
 
 
 const ParticularEvent = () => {
@@ -23,7 +24,7 @@ const ParticularEvent = () => {
     const { evento } = route.params;
 
     const imageUrl = `${API_BASE_URL}/images/${evento.img}`;
-    const dateString = new Date(evento.date).toLocaleDateString();
+    const dateString = formatEventDate(evento.date);
 
     return (
         <SafeAreaView style={styles.container} edges={['top']}>

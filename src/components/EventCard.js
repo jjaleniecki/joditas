@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { View, Text, Image, Pressable, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { formatEventDate } from '../utils/formatEventDate';
 
 const { width } = Dimensions.get('window');
 export const CARD_WIDTH = width * 0.35;
@@ -10,7 +11,7 @@ import { API_BASE_URL } from '../utils/api';
 
 const EventCard = ({ item }) => {
     const navigation = useNavigation();
-    const dateString = new Date(`${item.date}T00:00:00`).toLocaleDateString();
+    const dateString = formatEventDate(item.date);
     const imageUrl = `${API_BASE_URL}/images/${item.img}`;
 
     const irAlDetalle = () => {

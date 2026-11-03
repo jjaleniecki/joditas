@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import { normalizeCategory } from '../../utils/normalizeCategory';
 import { API_BASE_URL } from '../../utils/api';
+import { formatEventDate } from '../../utils/formatEventDate';
 
 const Search= () => {
     const navigation = useNavigation();
@@ -50,7 +51,7 @@ const Search= () => {
 
     const renderItem = ({ item }) => {
         const imageUrl = `${API_BASE_URL}/images/${item.img}`;
-        const dateString = new Date(item.date).toLocaleDateString();
+        const dateString = formatEventDate(item.date);
 
         return (
             <Pressable style={styles.resultado} onPress={() => irAlDetalle(item)}>

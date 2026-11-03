@@ -81,6 +81,12 @@ const CreateEventForm = () => {
             return false;
         }
 
+        const formatoHoraValido = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
+        if (!formatoHoraValido.test(form.openTime) || !formatoHoraValido.test(form.closeTime)) {
+            Alert.alert('Formato de hora inválido', 'Ingresá la apertura y el cierre en formato HH:MM (por ejemplo, 00:30)');
+            return false;
+        }
+
         if (!imagenUri) {
             Alert.alert('Falta la imagen', 'Subí el flyer del evento');
             return false;
@@ -171,17 +177,19 @@ const CreateEventForm = () => {
                     <View style={styles.row}>
                         <TextInput
                             style={[styles.input, styles.halfInput]}
-                            placeholder="Apertura (ej: 00:00hs)"
+                            placeholder="Apertura (HH:MM)"
                             placeholderTextColor="#888"
                             value={form.openTime}
                             onChangeText={(v) => actualizarCampo('openTime', v)}
+                            maxLength={5}
                         />
                         <TextInput
                             style={[styles.input, styles.halfInput]}
-                            placeholder="Cierre (ej: 06:00hs)"
+                            placeholder="Cierre (HH:MM)"
                             placeholderTextColor="#888"
                             value={form.closeTime}
                             onChangeText={(v) => actualizarCampo('closeTime', v)}
+                            maxLength={5}
                         />
                     </View>
 
