@@ -10,7 +10,7 @@ import { API_BASE_URL } from '../utils/api';
 
 const EventCard = ({ item }) => {
     const navigation = useNavigation();
-    const dateString = new Date(item.date).toLocaleDateString();
+    const dateString = new Date(`${item.date}T00:00:00`).toLocaleDateString();
     const imageUrl = `${API_BASE_URL}/images/${item.img}`;
 
     const irAlDetalle = () => {

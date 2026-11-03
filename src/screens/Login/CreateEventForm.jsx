@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
     View,
     Text,
@@ -15,7 +15,9 @@ import {
     StyleSheet,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { File } from 'expo-file-system';
 import { useAuth } from '../../context/AuthContext';
+import { useEvents } from '../../context/EventsContext';
 import CategoryPicker from '../../components/CategoryPicker';
 
 import { API_BASE_URL } from '../../utils/api';
@@ -36,23 +38,16 @@ const CreateEventForm = () => {
     const [form, setForm] = useState(CAMPOS_INICIALES);
     const [imagenUri, setImagenUri] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [categoriasExistentes, setCategoriasExistentes] = useState([]); // de los chips de categorias
 
     const { token, logout } = useAuth();
+    const { events, addEvent } = useEvents();
 
-    useEffect(() => {
-        const fetchCategorias = async () => {
-            try {
-                const res = await fetch(`${API_BASE_URL}/eventos`);
-                const eventos = await res.json();
-                const unicas = [...new Set(eventos.map(e => e.category).filter(Boolean))];
-                setCategoriasExistentes(unicas);
-            } catch (error) {
-                console.error('Error cargando categorías:', error);
-            }
-        };
-        fetchCategorias();
-    }, []);
+    // Categorías existentes (chips): se derivan de los eventos del context,
+    // así una categoría nueva aparece apenas se publica el evento
+    const categoriasExistentes = useMemo(
+        () => [...new Set(events.map((e) => e.category).filter(Boolean))],
+        [events]
+    );
 
     const actualizarCampo = (campo, valor) => {
         setForm((prev) => ({ ...prev, [campo]: valor }));
@@ -67,7 +62,7 @@ const CreateEventForm = () => {
         }
 
         const result = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            mediaTypes: ['images'],
             quality: 0.8,
             allowsEditing: true,
             aspect: [3, 4],
@@ -106,15 +101,8 @@ const CreateEventForm = () => {
                 formData.append(clave, valor);
             });
 
-            // Armamos el nombre y tipo del archivo a partir de la uri local
-            const nombreArchivo = imagenUri.split('/').pop();
-            const extension = nombreArchivo.split('.').pop();
-
-            formData.append('img', {
-                uri: imagenUri,
-                name: nombreArchivo,
-                type: `image/${extension === 'jpg' ? 'jpeg' : extension}`,
-            });
+            // File de expo-file-system se comporta como Blob, el fetch nuevo lo acepta directo
+            formData.append('img', new File(imagenUri));
 
             const response = await fetch(`${API_BASE_URL}/eventos`, {
                 method: 'POST',
@@ -130,6 +118,10 @@ const CreateEventForm = () => {
             if (!response.ok) {
                 throw new Error(data.error || 'Error al crear el evento');
             }
+
+            // El POST devuelve el evento creado: lo sumamos al context
+            // y Home/Calendar se actualizan solos
+            addEvent(data);
 
             Alert.alert('Listo', 'Evento creado correctamente');
             setForm(CAMPOS_INICIALES);

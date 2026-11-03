@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { View, FlatList, ActivityIndicator, Image, Dimensions } from 'react-native';
+import React, { useState, useMemo } from 'react';
+import { FlatList, ActivityIndicator, Image, Dimensions } from 'react-native';
 import { Header } from '@rneui/themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles'; //estilos de su carpeta
-import { API_BASE_URL } from '../../utils/api';
+import { useEvents } from '../../context/EventsContext';
 
 import EventRow from '../../components/EventRow';
 
@@ -29,33 +29,17 @@ const groupEventsByCategory = (events) => {
 };
 
 const Home = () => {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { events, loading, fetchEvents } = useEvents();
+    const [refreshing, setRefreshing] = useState(false);
 
-    useEffect(() => {
-        const fetchEvents = async () => {
-            try {
-                const response = await fetch(`${API_BASE_URL}/eventos`);
+    // Se recalcula solo cuando "events" cambia, no en cada render
+    const groupedData = useMemo(() => groupEventsByCategory(events), [events]);
 
-                if (!response.ok) {
-                    throw new Error('No dio response OK');
-                }
-
-                const jsonData = await response.json();
-                setData(jsonData);
-
-            } catch (error) {
-                console.error("Error cargando JSON:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchEvents();
-    }, []);
-
-    // Se recalcula solo cuando "data" cambia, no en cada render
-    const groupedData = useMemo(() => groupEventsByCategory(data), [data]);
+    const onRefresh = async () => {
+        setRefreshing(true);
+        await fetchEvents();
+        setRefreshing(false);
+    };
 
     const renderHeader = () => (
         <Image
@@ -88,6 +72,10 @@ const Home = () => {
                     renderItem={({ item }) => <EventRow category={item} />}
                     ListHeaderComponent={renderHeader}
                     contentContainerStyle={{ paddingBottom: 50 }}
+
+                    // Pull-to-refresh (opcional: si no lo querés, borrá estas dos props y onRefresh)
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
 
                     // Performance props
                     initialNumToRender={3}

@@ -1,32 +1,16 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { Header } from '@rneui/themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Calendar as RNCalendar } from 'react-native-calendars';
 import styles from './styles'; //estilos de su carpeta
-import { API_BASE_URL } from '../../utils/api';
+import { useEvents } from '../../context/EventsContext';
 import EventCard from '../../components/EventCard';
 
 const Calendar = () => {
-    const [eventos, setEventos] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // Los eventos vienen del context (un solo fetch compartido con Home)
+    const { events: eventos, loading } = useEvents();
     const [selectedDate, setSelectedDate] = useState(null);
-
-    useEffect(() => {
-        const fetchEventos = async () => {
-            try {
-                const response = await fetch(`${API_BASE_URL}/eventos`);
-                if (!response.ok) throw new Error('No dio response OK');
-                const jsonData = await response.json();
-                setEventos(jsonData);
-            } catch (error) {
-                console.error('Error cargando eventos:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchEventos();
-    }, []);
 
     // Arma { "2026-12-09": { marked: true, dotColor: '#ca780c' }, ... }
     const markedDates = useMemo(() => {

@@ -362,5 +362,31 @@
         "city": "Nqn",
         "category": "RKT",
         "date": "2026-06-10"
+    },
+    {
+        "id": "c93e9928-4a74-4098-8890-d28ef40ee5f5",
+        "title": "la fiesta de kylo",
+        "img": "f5cef66a-e830-496d-9a7c-d32f6d90bdfe.jpg",
+        "venue": "micasa",
+        "openTime": "00:00",
+        "closeTime": "08:00",
+        "contact": "jere",
+        "mapUrl": "no hay",
+        "city": "Neuquen",
+        "category": "Tecno",
+        "date": "2026-11-03"
+    },
+    {
+        "id": "eae69ea9-50ad-480e-9c2d-e17f6ab8c708",
+        "title": "la fiesta de dona",
+        "img": "8a8e7a21-4c4c-49fd-9b5c-02409781785a.jpg",
+        "venue": "mi casa 2",
+        "openTime": "23:00",
+        "closeTime": "04:00",
+        "contact": "no hay",
+        "mapUrl": "no hay",
+        "city": "Neuquen",
+        "category": "RKT",
+        "date": "2026-11-05"
     }
 ]
