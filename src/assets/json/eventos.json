@@ -388,5 +388,18 @@
         "city": "Neuquen",
         "category": "RKT",
         "date": "2026-11-05"
+    },
+    {
+        "id": "9538d486-866d-45ca-9d1d-ba2f85c563c8",
+        "title": "la fiesta de perry",
+        "img": "f82d1a42-4e20-4c40-9733-1cf67c11f203.jpg",
+        "venue": "mi casa",
+        "openTime": "00:00",
+        "closeTime": "06:00",
+        "contact": "no hay",
+        "mapUrl": "no hay",
+        "city": "Neuquen",
+        "category": "old school",
+        "date": "2026-11-10"
     }
 ]

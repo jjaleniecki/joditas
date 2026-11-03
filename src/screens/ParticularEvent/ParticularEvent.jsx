@@ -13,7 +13,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles'; //estilos de su carpeta
 import { API_BASE_URL } from '../../utils/api';
-
+import { abrirMapa } from '../../utils/maps'; //chequea validez del link de maps
+import { abrirContacto } from '../../utils/links'; //idem para contacto
 
 
 const ParticularEvent = () => {
@@ -23,14 +24,6 @@ const ParticularEvent = () => {
 
     const imageUrl = `${API_BASE_URL}/images/${evento.img}`;
     const dateString = new Date(evento.date).toLocaleDateString();
-
-    const abrirContacto = () => {
-        Linking.openURL(evento.contact);
-    };
-
-    const abrirMapa = () => {
-        Linking.openURL(evento.mapUrl);
-    };
 
     return (
         <SafeAreaView style={styles.container} edges={['top']}>
@@ -68,12 +61,12 @@ const ParticularEvent = () => {
                         <Text style={styles.infoText}>{evento.category}</Text>
                     </View>
 
-                    <Pressable style={styles.button} onPress={abrirContacto}>
+                    <Pressable style={styles.button} onPress={() => abrirContacto(evento.contact)}>
                         <Ionicons name="logo-instagram" size={18} color="#fff" />
                         <Text style={styles.buttonText}>Contacto</Text>
                     </Pressable>
 
-                    <Pressable style={[styles.button, styles.buttonOutline]} onPress={abrirMapa}>
+                    <Pressable style={[styles.button, styles.buttonOutline]} onPress={() => abrirMapa(evento.mapUrl, evento.city)}>
                         <Ionicons name="map-outline" size={18} color="#ca780c" />
                         <Text style={[styles.buttonText, styles.buttonTextOutline]}>Ver ubicación</Text>
                     </Pressable>
