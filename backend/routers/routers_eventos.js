@@ -42,8 +42,41 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/eventos", async (req, res) => {
-    const eventos = obtenerEventosJson();
-    res.json(eventos);
+    let eventos = obtenerEventosJson();
+    const { cant, offset, category } = req.query;
+
+    if (category !== undefined) {
+        if (typeof category !== 'string' || !category.trim()) {
+            return res.status(400).json({ error: 'La categoría debe ser un texto no vacío' });
+        }
+        eventos = eventos.filter(evento => evento.category === category);
+    }
+
+    if (cant === undefined && offset === undefined && category === undefined) {
+        return res.json(eventos);
+    }
+
+    const parseEntero = (valor, valorPredeterminado) => {
+        if (valor === undefined) return valorPredeterminado;
+        if (typeof valor !== 'string' || !/^\d+$/.test(valor)) return NaN;
+        return Number(valor);
+    };
+    const cantidad = parseEntero(cant, 10);
+    const desplazamiento = parseEntero(offset, 0);
+    const esEnteroNoNegativo = valor => Number.isSafeInteger(valor) && valor >= 0;
+
+    if (!esEnteroNoNegativo(cantidad) || cantidad < 1 || cantidad > 100) {
+        return res.status(400).json({ error: 'cant debe ser un entero entre 1 y 100' });
+    }
+    if (!esEnteroNoNegativo(desplazamiento)) {
+        return res.status(400).json({ error: 'offset debe ser un entero mayor o igual a 0' });
+    }
+
+    if (category !== undefined) {
+        eventos.sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
+    }
+
+    res.json(eventos.slice(desplazamiento, desplazamiento + cantidad));
 });
 
 router.post("/eventos", auth, upload.single('img'), async (req, res) => {
