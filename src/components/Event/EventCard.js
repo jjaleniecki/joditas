@@ -1,13 +1,14 @@
 import React, { memo } from 'react';
 import { View, Text, Image, Pressable, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { formatEventDate } from '../utils/formatEventDate';
+import { formatEventDate } from '../../utils/formatEventDate';
+import styles from './styles'; //estilos de su carpeta
 
 const { width } = Dimensions.get('window');
 export const CARD_WIDTH = width * 0.35;
 
 // Misma base que usás en Home.jsx
-import { API_BASE_URL } from '../utils/api';
+import { API_BASE_URL } from '../../utils/api';
 
 const EventCard = ({ item }) => {
     const navigation = useNavigation();
@@ -30,12 +31,5 @@ const EventCard = ({ item }) => {
         </Pressable>
     );
 };
-
-const styles = StyleSheet.create({
-    card: { width: CARD_WIDTH, marginLeft: 15 },
-    image: { width: '100%', height: CARD_WIDTH * 1.5, backgroundColor: '#333', borderRadius: 8, marginBottom: 5 },
-    cardTitle: { color: '#fff', fontSize: 14, fontWeight: '600' },
-    cardDate: { color: '#aaa', fontSize: 12 },
-});
 
 export default memo(EventCard);

@@ -12,15 +12,15 @@ import {
     KeyboardAvoidingView,
     TouchableWithoutFeedback,
     Platform,
-    StyleSheet,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { File } from 'expo-file-system';
 import { useAuth } from '../../context/AuthContext';
 import { useEvents } from '../../context/EventsContext';
-import CategoryPicker from '../../components/CategoryPicker';
+import CategoryPicker from '../../components/CategoryPicker/CategoryPicker';
 
 import { API_BASE_URL } from '../../utils/api';
+import styles from './styles';
 
 const CAMPOS_INICIALES = {
     title: '',
@@ -143,23 +143,23 @@ const CreateEventForm = () => {
 
     return (
         <KeyboardAvoidingView
-            style={{ flex: 1 }}
+            style={styles.eventFormKeyboardAvoidingView}
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-                    <Text style={styles.title}>Crear evento</Text>
+                <ScrollView contentContainerStyle={styles.eventFormContainer} keyboardShouldPersistTaps="handled">
+                    <Text style={styles.eventFormTitle}>Crear evento</Text>
 
-                    <Pressable style={styles.imagePicker} onPress={seleccionarImagen}>
+                    <Pressable style={styles.eventImagePicker} onPress={seleccionarImagen}>
                         {imagenUri ? (
-                            <Image source={{ uri: imagenUri }} style={styles.imagePreview} />
+                            <Image source={{ uri: imagenUri }} style={styles.eventImagePreview} />
                         ) : (
-                            <Text style={styles.imagePickerText}>Tocá para subir el flyer</Text>
+                            <Text style={styles.eventImagePickerText}>Tocá para subir el flyer</Text>
                         )}
                     </Pressable>
 
                     <TextInput
-                        style={styles.input}
+                        style={styles.eventFormInput}
                         placeholder="Título del evento"
                         placeholderTextColor="#888"
                         value={form.title}
@@ -167,16 +167,16 @@ const CreateEventForm = () => {
                     />
 
                     <TextInput
-                        style={styles.input}
+                        style={styles.eventFormInput}
                         placeholder="Lugar"
                         placeholderTextColor="#888"
                         value={form.venue}
                         onChangeText={(v) => actualizarCampo('venue', v)}
                     />
 
-                    <View style={styles.row}>
+                    <View style={styles.eventFormRow}>
                         <TextInput
-                            style={[styles.input, styles.halfInput]}
+                            style={[styles.eventFormInput, styles.eventFormHalfInput]}
                             placeholder="Apertura (HH:MM)"
                             placeholderTextColor="#888"
                             value={form.openTime}
@@ -184,7 +184,7 @@ const CreateEventForm = () => {
                             maxLength={5}
                         />
                         <TextInput
-                            style={[styles.input, styles.halfInput]}
+                            style={[styles.eventFormInput, styles.eventFormHalfInput]}
                             placeholder="Cierre (HH:MM)"
                             placeholderTextColor="#888"
                             value={form.closeTime}
@@ -194,7 +194,7 @@ const CreateEventForm = () => {
                     </View>
 
                     <TextInput
-                        style={styles.input}
+                        style={styles.eventFormInput}
                         placeholder="Contacto (link de Instagram, etc.)"
                         placeholderTextColor="#888"
                         value={form.contact}
@@ -203,7 +203,7 @@ const CreateEventForm = () => {
                     />
 
                     <TextInput
-                        style={styles.input}
+                        style={styles.eventFormInput}
                         placeholder="URL de Google Maps (embed)"
                         placeholderTextColor="#888"
                         value={form.mapUrl}
@@ -212,7 +212,7 @@ const CreateEventForm = () => {
                     />
 
                     <TextInput
-                        style={styles.input}
+                        style={styles.eventFormInput}
                         placeholder="Ciudad"
                         placeholderTextColor="#888"
                         value={form.city}
@@ -226,96 +226,28 @@ const CreateEventForm = () => {
                     />
 
                     <TextInput
-                        style={styles.input}
+                        style={styles.eventFormInput}
                         placeholder="Fecha (YYYY-MM-DD)"
                         placeholderTextColor="#888"
                         value={form.date}
                         onChangeText={(v) => actualizarCampo('date', v)}
                     />
 
-                    <Pressable style={styles.button} onPress={handleSubmit} disabled={loading}>
+                    <Pressable style={styles.eventFormButton} onPress={handleSubmit} disabled={loading}>
                         {loading ? (
                             <ActivityIndicator color="#fff" />
                         ) : (
-                            <Text style={styles.buttonText}>Publicar evento</Text>
+                            <Text style={styles.eventFormButtonText}>Publicar evento</Text>
                         )}
                     </Pressable>
 
-                    <Pressable style={styles.logoutButton} onPress={logout}>
-                        <Text style={styles.logoutText}>Cerrar sesión</Text>
+                    <Pressable style={styles.eventFormLogoutButton} onPress={logout}>
+                        <Text style={styles.eventFormLogoutText}>Cerrar sesión</Text>
                     </Pressable>
                 </ScrollView>
             </TouchableWithoutFeedback>
         </KeyboardAvoidingView>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        paddingHorizontal: 24,
-        paddingTop: 24,
-        paddingBottom: 48,
-    },
-    title: {
-        color: '#fff',
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        textAlign: 'center',
-    },
-    imagePicker: {
-        height: 200,
-        backgroundColor: '#1a1a1a',
-        borderRadius: 8,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: 16,
-        overflow: 'hidden',
-    },
-    imagePickerText: {
-        color: '#888',
-        fontSize: 14,
-    },
-    imagePreview: {
-        width: '100%',
-        height: '100%',
-    },
-    input: {
-        backgroundColor: '#1a1a1a',
-        color: '#fff',
-        borderRadius: 8,
-        paddingHorizontal: 16,
-        paddingVertical: 12,
-        marginBottom: 16,
-        fontSize: 16,
-    },
-    row: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
-    halfInput: {
-        width: '48%',
-    },
-    button: {
-        backgroundColor: '#ca780c',
-        borderRadius: 8,
-        paddingVertical: 14,
-        alignItems: 'center',
-        marginTop: 8,
-    },
-    buttonText: {
-        color: '#fff',
-        fontSize: 16,
-        fontWeight: '600',
-    },
-    logoutButton: {
-        alignItems: 'center',
-        marginTop: 20,
-    },
-    logoutText: {
-        color: '#888',
-        fontSize: 14,
-    },
-});
 
 export default CreateEventForm;

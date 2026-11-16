@@ -3,9 +3,8 @@ import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { Header } from '@rneui/themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Calendar as RNCalendar } from 'react-native-calendars';
-import styles from './styles'; //estilos de su carpeta
 import { useEvents } from '../../context/EventsContext';
-import EventCard from '../../components/EventCard';
+import EventCard from '../../components/Event/EventCard';
 
 const Calendar = () => {
     // Los eventos vienen del context (un solo fetch compartido con Home)
@@ -36,7 +35,7 @@ const Calendar = () => {
     }, [eventos, selectedDate]);
 
     return (
-        <SafeAreaView style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }} edges={['bottom', 'left', 'right']}>
+        <SafeAreaView style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }} edges={['left', 'right']}>
             <Header
                 statusBarProps={{ barStyle: 'light-content' }}
                 placement="center"

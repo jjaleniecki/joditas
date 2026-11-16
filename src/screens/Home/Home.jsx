@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles'; //estilos de su carpeta
 import { useEvents } from '../../context/EventsContext';
 
-import EventRow from '../../components/EventRow';
+import EventRow from '../../components/Event/EventRow';
 
 const { width } = Dimensions.get('window');
 
@@ -50,7 +50,7 @@ const Home = () => {
     );
 
     return (
-        <SafeAreaView style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }} edges={['bottom', 'left', 'right']}>
+        <SafeAreaView style={{ flex: 1, paddingTop: 0, backgroundColor: '#111' }} edges={['left', 'right']}>
             <Header
                 statusBarProps={{ barStyle: 'light-content' }}
                 placement="center"

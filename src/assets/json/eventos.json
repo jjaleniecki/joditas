@@ -401,5 +401,18 @@
         "city": "Neuquen",
         "category": "Old School",
         "date": "2026-11-10"
+    },
+    {
+        "id": "165fc3d2-76bc-4dc2-aff1-f74326ce0cb0",
+        "title": "la fiesta de la mona",
+        "img": "732f7774-1286-46ae-a207-21219b0036cf.jpg",
+        "venue": "La cucha de la mona",
+        "openTime": "12:00",
+        "closeTime": "19:00",
+        "contact": "no hay",
+        "mapUrl": "no hay",
+        "city": "Neuquen",
+        "category": "Old School",
+        "date": "2026-12-10"
     }
 ]

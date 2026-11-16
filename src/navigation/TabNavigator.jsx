@@ -17,7 +17,8 @@ export default function TabNavigator() {
                 tabBarStyle: {
                     backgroundColor: '#111',
                     borderTopWidth: 0,
-                    height: 70,
+                    height: 75,
+                    paddingTop: 8,
                 },
             }}>
             <Tab.Screen

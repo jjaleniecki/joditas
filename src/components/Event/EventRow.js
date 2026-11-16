@@ -1,7 +1,8 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, ActivityIndicator, Pressable } from 'react-native';
 import EventCard, { CARD_WIDTH } from './EventCard';
-import { API_BASE_URL } from '../utils/api';
+import { API_BASE_URL } from '../../utils/api';
+import styles from './styles'; //estilos de su carpeta
 
 const EventRow = ({ category }) => {
     const [events, setEvents] = useState([]);
@@ -99,11 +100,5 @@ const EventRow = ({ category }) => {
     );
 };
 
-const styles = StyleSheet.create({
-    rowContainer: { marginBottom: 25 },
-    rowTitle: { color: '#888', fontSize: 20, fontWeight: 'bold', marginLeft: 15, marginBottom: 10 },
-    footer: { width: 100, justifyContent: 'center', alignItems: 'center' },
-    error: { color: '#ca780c', fontSize: 12, textAlign: 'center' },
-});
 
 export default memo(EventRow);
