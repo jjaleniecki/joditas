@@ -41,7 +41,7 @@
     {
         "id": "4",
         "title": "Summer",
-        "img": "Cachengue.jpg",
+        "img": "cachengue.jpg",
         "venue": "Espacio Duam ",
         "openTime": "00:30hs",
         "closeTime": "06:00hs",
@@ -171,7 +171,7 @@
     {
         "id": "14",
         "title": "Modo RKT",
-        "img": "RKT.jpg",
+        "img": "rkt.jpg",
         "venue": "Mood",
         "openTime": "23:00hs",
         "closeTime": "06:00hs",
