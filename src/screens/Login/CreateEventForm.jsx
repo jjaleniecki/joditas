@@ -127,7 +127,7 @@ const CreateEventForm = () => {
 
             // El POST devuelve el evento creado: lo sumamos al context
             // y Home/Calendar se actualizan solos
-            addEvent(data);
+            addEvent({ ...data, previewUri: imagenUri });
 
             Alert.alert('Listo', 'Evento creado correctamente');
             setForm(CAMPOS_INICIALES);

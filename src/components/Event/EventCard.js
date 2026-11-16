@@ -13,7 +13,7 @@ import { API_BASE_URL } from '../../utils/api';
 const EventCard = ({ item }) => {
     const navigation = useNavigation();
     const dateString = formatEventDate(item.date);
-    const imageUrl = `${API_BASE_URL}/images/${item.img}`;
+    const imageUrl = item.previewUri || `${API_BASE_URL}/images/${item.img}`;
 
     const irAlDetalle = () => {
         navigation.navigate('ParticularEvent', { evento: item });

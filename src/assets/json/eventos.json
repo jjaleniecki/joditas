@@ -414,5 +414,70 @@
         "city": "Neuquen",
         "category": "Old School",
         "date": "2026-12-10"
+    },
+    {
+        "id": "5693c91f-36b3-4557-a66b-0fe0373ac561",
+        "title": "miamiaumiau",
+        "img": "c73ce67a-28bd-4600-b011-68afd773cdb5.jpg",
+        "venue": "la casa loca",
+        "openTime": "10:30",
+        "closeTime": "18:30",
+        "contact": "no",
+        "mapUrl": "no",
+        "city": "Tucuman",
+        "category": "Old School",
+        "date": "2026-12-09"
+    },
+    {
+        "id": "9d0aa142-8eca-49bb-80cc-e129c461d70f",
+        "title": "miaaaauuu",
+        "img": "dec91d59-2259-4e59-8278-b646cd252bc2.jpg",
+        "venue": "Casa",
+        "openTime": "12:00",
+        "closeTime": "19:00",
+        "contact": "no",
+        "mapUrl": "no",
+        "city": "Plottier",
+        "category": "Old School",
+        "date": "2026-12-16"
+    },
+    {
+        "id": "05a88dbb-40e3-4d5a-8022-a01c9561cd6d",
+        "title": "La super sunset",
+        "img": "6a300dbe-c3fc-4be6-9add-5c1157d013ed.jpg",
+        "venue": "La super casa",
+        "openTime": "18:00",
+        "closeTime": "00:00",
+        "contact": "no",
+        "mapUrl": "no",
+        "city": "Neuquen",
+        "category": "Old School",
+        "date": "2026-12-13"
+    },
+    {
+        "id": "690b98bb-ed8e-419c-8858-02fa8010814f",
+        "title": "La fiesta divertida",
+        "img": "9b4bd6f8-7144-4289-90eb-be5da351d293.jpg",
+        "venue": "La casa super loca",
+        "openTime": "19:00",
+        "closeTime": "22:00",
+        "contact": "no",
+        "mapUrl": "no",
+        "city": "Centenario",
+        "category": "Old School",
+        "date": "2026-12-15"
+    },
+    {
+        "id": "91c8bf2c-2d12-4bfe-8c32-31269dd2739d",
+        "title": "Crazy Party",
+        "img": "8b4a17de-9f82-4234-9512-d2247be837db.jpg",
+        "venue": "La crazy house",
+        "openTime": "11:00",
+        "closeTime": "19:00",
+        "contact": "no",
+        "mapUrl": "no",
+        "city": "Neuquen ",
+        "category": "Old School",
+        "date": "2026-12-17"
     }
 ]

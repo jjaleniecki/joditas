@@ -5,6 +5,7 @@ import { API_BASE_URL } from '../../utils/api';
 import styles from './styles'; //estilos de su carpeta
 
 const EventRow = ({ category }) => {
+    const eventCount = category.events.length;
     const [events, setEvents] = useState([]);
     const [offset, setOffset] = useState(0);
     const [hasMore, setHasMore] = useState(true);
@@ -13,6 +14,7 @@ const EventRow = ({ category }) => {
     const [error, setError] = useState(null);
     const requestInProgress = useRef(false);
     const requestId = useRef(0);
+    const previousEventCount = useRef(eventCount);
 
     const fetchPage = useCallback(async (pageOffset, currentRequestId) => {
         if (requestInProgress.current) return;
@@ -31,7 +33,11 @@ const EventRow = ({ category }) => {
             if (!Array.isArray(page)) throw new Error('La respuesta de eventos no es válida');
             if (requestId.current !== currentRequestId) return;
 
-            setEvents(previous => pageOffset === 0 ? page : [...previous, ...page]);
+            setEvents((previous) => {
+                const combined = [...page, ...previous];
+                const uniqueEvents = [...new Map(combined.map((event) => [event.id, event])).values()];
+                return uniqueEvents.sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
+            });
             setOffset(pageOffset + page.length);
             setHasMore(page.length === 10);
         } catch (fetchError) {
@@ -61,6 +67,20 @@ const EventRow = ({ category }) => {
             requestInProgress.current = false;
         };
     }, [category.title, fetchPage]);
+
+    useEffect(() => {
+        const newEvents = category.events.slice(previousEventCount.current);
+        previousEventCount.current = eventCount;
+
+        if (newEvents.length === 0) return;
+
+        setEvents((previous) => {
+            const uniqueEvents = [
+                ...new Map([...previous, ...newEvents].map((event) => [event.id, event])).values(),
+            ];
+            return uniqueEvents.sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
+        });
+    }, [category.events, eventCount]);
 
     const loadMore = useCallback(() => {
         if (hasMore && !requestInProgress.current) {
